@@ -8,14 +8,20 @@ import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.Locale;
 import java.util.Queue;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ImageView handImageView;
     ImageView setHandImageView;
+    ImageButton gaweButton;
+    ImageButton baweButton;
+    ImageButton boButton;
+    ImageButton replayButton;
     AnimationDrawable animationDrawable;
     TextToSpeech textToSpeech;
 
@@ -36,8 +42,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         handImageView = findViewById(R.id.hand_anim_image_view);
         setHandImageView=findViewById(R.id.set_hand_image_view);
-        handImageView.setVisibility(View.GONE);
-        setHandImageView.setVisibility(View.VISIBLE);
+
+        gaweButton = findViewById(R.id.gawe_button);
+        baweButton = findViewById(R.id.bawe_button);
+        boButton = findViewById(R.id.bo_button);
+        replayButton = findViewById(R.id.replay_button);
+
+       // handImageView.setVisibility(View.GONE);
+        //setHandImageView.setVisibility(View.VISIBLE);
 
 
 
@@ -54,15 +66,64 @@ public class MainActivity extends AppCompatActivity {
                setHandImageView.setVisibility(View.GONE);
                handImageView.setVisibility(View.VISIBLE);
                animationDrawable.start();
-               textToSpeech.speak("가위바위보",TextToSpeech.QUEUE_FLUSH,null,null);
-
+               voicePlay("가위바위보");
+               replayButton.setEnabled(false);
+                gaweButton.setEnabled(true);
+                baweButton.setEnabled(true);
+                boButton.setEnabled(true);
 
                break;
-
-            default:
+            case R.id.gawe_button:
+            case R.id.bawe_button:
+            case R.id.bo_button:
+                replayButton.setEnabled(true);
+                gaweButton.setEnabled(false);
+                baweButton.setEnabled(false);
+                boButton.setEnabled(false);
                 animationDrawable.stop();
                 handImageView.setVisibility(View.GONE);
                 setHandImageView.setVisibility(View.VISIBLE);
+                int getComHand = new Random().nextInt(3)+1;
+                switch (getComHand){
+                    case 1:
+                        setHandImageView.setImageResource(R.drawable.gawe);
+                        if(view.getId()== R.id.gawe_button){
+                            voicePlay("비겼어요. 다시 시작하세요");
+                        }else if(view.getId()==R.id.bawe_button){
+                            voicePlay("당신이 이겼어요");
+                        }else{
+                            voicePlay("제가 이겼어요. ");
+                        }
+                        break;
+                    case 2:
+                        setHandImageView.setImageResource(R.drawable.bawe);
+                        if(view.getId()== R.id.gawe_button){
+                            voicePlay("제가 이겼어요. ");
+
+                        }else if(view.getId()==R.id.bawe_button){
+                            voicePlay("비겼어요. 다시 시작하세요");
+                        }else{
+                            voicePlay("당신이 이겼어요");
+
+                        }
+                        break;
+                    case 3:
+                        setHandImageView.setImageResource(R.drawable.bo);
+                        if(view.getId()== R.id.gawe_button){
+
+                            voicePlay("당신이 이겼어요");
+                        }else if(view.getId()==R.id.bawe_button){
+                            voicePlay("제가 이겼어요. ");
+                        }else{
+
+                            voicePlay("비겼어요. 다시 시작하세요");
+                        }
+                        break;
+                }
+            break;
+
+            default:
+
                 setHandImageView.setImageResource(R.drawable.gawe);
 
                 break;
@@ -74,5 +135,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         textToSpeech.shutdown();
+    }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void voicePlay(String voiceText){
+        textToSpeech.speak(voiceText,TextToSpeech.QUEUE_FLUSH,null,null);
     }
 }
