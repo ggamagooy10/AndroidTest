@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+        <Chronometer
+            android:id="@+id/chronometer1"
+            android:format="예약에 걸린 시간  %s"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:text="예약 시작"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+         
+    </LinearLayout>
+    <RadioGroup
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <RadioButton
+            android:id="@+id/rdoCal"
+            android:text="날짜 설정 (캘린더뷰)"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+        <RadioButton
+            android:id="@+id/rdoTime"
+            android:text="시간 설정"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+</RadioGroup>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="1"/>
+
+        <FrameLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <CalendarView
+               android:id="@+id/calendarView1"
+                android:showWeekNumber="false"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+        <TimePicker
+           android:id="@+id/timePicker1"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+    </FrameLayout>
+    </LinearLayout>
+        <LinearLayout
+          android:background="#CCCCCC"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <Button
+                android:id="@+id/btnEnd"
+                android:text="예약완료"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+              android:id="@+id/tvYear"
+                android:text="0000"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+               android:text="년"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:id="@+id/tvMonth"
+                android:text="00"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:text="월"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:id="@+id/tvDay"
+                android:text="00"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:text="일"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:id="@+id/tvHour"
+                android:text="00"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:text="시"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:id="@+id/tvMinute"
+                android:text="00"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:text="분예약됨"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+        </LinearLayout>
+</LinearLayout>
