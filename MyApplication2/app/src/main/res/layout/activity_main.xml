@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/welcomeMessage"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="구기어때"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp"
@@ -18,41 +20,58 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:text="아이디"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="94dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/idText"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="ID:"
+        android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHighlight="@color/colorAccent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="139dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="139dp" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:text="비밀번호"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="201dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="201dp" />
 
-    <TextView
+    <EditText
+        android:hint="Passward"
         android:id="@+id/passwordText"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="5dp"
         tools:layout_editor_absoluteY="249dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인" />
+
+    <Button
+        android:id="@+id/RegisterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입" />
+</LinearLayout>
