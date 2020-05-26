@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="구기어때"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="4dp"
@@ -23,7 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:text="아이디"
-        android:textAlignment="textStart"
+        android:gravity="center_vertical"
+
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         tools:ignore="MissingConstraints"
@@ -46,11 +47,10 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:gravity="center_vertical"
         android:text="비밀번호"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="201dp" />
+        android:textSize="24sp" />
 
     <EditText
         android:hint="Passward"
