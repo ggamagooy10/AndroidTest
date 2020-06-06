@@ -1,54 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcomeMessage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="구기어때"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="아이디"
+        android:gravity="center_vertical"
+
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="94dp" />
 
     <EditText
         android:id="@+id/idText"
-        android:layout_width="376dp"
-        android:layout_height="56dp"
-        android:ems="10"
-        android:hint="아이디"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/PasswordText"
-        app:layout_constraintStart_toStartOf="@+id/PasswordText"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="ID:"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHighlight="@color/colorAccent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="27dp" />
-
-    <EditText
-        android:id="@+id/PasswordText"
-        android:layout_width="354dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/loginButton"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="95dp" />
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="354dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="44dp"
-        android:text="로그인"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="191dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="139dp" />
 
     <TextView
-        android:id="@+id/registerButton"
-        android:layout_width="113dp"
-        android:layout_height="31dp"
-        android:text="회원가입"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="273dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:text="비밀번호"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="24sp" />
+
+    <EditText
+        android:hint="Passward"
+        android:id="@+id/passwordText"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="249dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인" />
+
+    <Button
+        android:id="@+id/RegisterActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입" />
+</LinearLayout>
